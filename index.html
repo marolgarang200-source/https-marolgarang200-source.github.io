@@ -20,18 +20,17 @@
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 15px;
         }
 
         header {
             background: white;
             border-radius: 15px;
-            padding: 30px;
-            margin-bottom: 30px;
+            padding: 25px;
+            margin-bottom: 25px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
             text-align: center;
             position: relative;
-            overflow: hidden;
         }
 
         header::before {
@@ -44,558 +43,373 @@
             background: linear-gradient(90deg, #ffd700, #ff8c00, #ffd700);
         }
 
-        .logo-container {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 15px;
-            margin-bottom: 15px;
-        }
-
-        .logo-icon {
-            font-size: 3.5em;
-            animation: float 3s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-        }
-
         .library-name {
-            font-size: 2.8em;
+            font-size: 2.2em;
             font-weight: 800;
-            background: linear-gradient(135deg, #1a5e1a, #2d8a2d);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin: 0;
+            color: #1a5e1a;
+            margin: 10px 0;
         }
 
         .location-badge {
             display: inline-block;
             background: #ffd700;
             color: #1a5e1a;
-            padding: 8px 20px;
-            border-radius: 25px;
+            padding: 6px 15px;
+            border-radius: 20px;
             font-weight: bold;
-            font-size: 0.9em;
-            margin-bottom: 15px;
+            font-size: 0.85em;
         }
 
         .tagline {
             color: #666;
-            font-size: 1.2em;
-            margin-bottom: 10px;
-            font-style: italic;
+            font-size: 1em;
+            margin: 10px 0;
         }
 
-        .motto {
-            color: #1a5e1a;
-            font-weight: 600;
+        /* BIG VISIBLE BUTTONS */
+        .main-buttons {
+            display: flex;
+            gap: 10px;
+            margin: 15px 0;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .big-btn {
+            padding: 15px 25px;
+            border-radius: 15px;
             font-size: 1.1em;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+            min-width: 140px;
+        }
+
+        .upload-btn {
+            background: #ffd700;
+            color: #1a5e1a;
+            border: 3px solid #ff8c00;
         }
 
         .admin-btn {
-            position: fixed;
-            bottom: 20px;
-            left: 20px;
             background: #333;
             color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 25px;
-            cursor: pointer;
-            z-index: 999;
-            font-size: 0.9em;
-            opacity: 0.7;
-            transition: opacity 0.3s;
         }
 
-        .admin-btn:hover {
-            opacity: 1;
+        .search-btn {
+            background: #2d8a2d;
+            color: white;
         }
 
-        .upload-section {
+        .section {
             background: white;
             border-radius: 15px;
-            padding: 30px;
-            margin-bottom: 30px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
 
         .section-title {
             color: #1a5e1a;
-            margin-bottom: 5px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            text-align: center;
         }
 
-        .section-subtitle {
-            color: #666;
-            margin-bottom: 20px;
-            font-size: 0.95em;
-        }
-
-        .password-overlay {
+        .password-box {
             background: #f0f9f0;
-            border: 3px dashed #2d8a2d;
+            border: 2px solid #2d8a2d;
             border-radius: 10px;
-            padding: 30px;
+            padding: 20px;
             text-align: center;
         }
 
-        .password-input {
-            padding: 12px 20px;
+        input, select, textarea {
+            width: 100%;
+            padding: 15px;
             border: 2px solid #ddd;
-            border-radius: 25px;
+            border-radius: 10px;
             font-size: 1em;
-            margin: 10px 0;
-            width: 250px;
-            text-align: center;
+            margin: 8px 0;
+        }
+
+        textarea {
+            min-height: 80px;
+            resize: vertical;
+        }
+
+        .btn {
+            background: #2d8a2d;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 10px;
+            font-size: 1.1em;
+            cursor: pointer;
+            width: 100%;
+            margin: 8px 0;
+            font-weight: bold;
+        }
+
+        .btn-delete {
+            background: #dc3545;
+        }
+
+        .btn-approve {
+            background: #28a745;
         }
 
         .upload-area {
             border: 3px dashed #2d8a2d;
             border-radius: 10px;
-            padding: 40px;
+            padding: 25px;
             text-align: center;
-            transition: all 0.3s ease;
-            cursor: pointer;
             background: #f0f9f0;
-        }
-
-        .upload-area:hover {
-            border-color: #1a5e1a;
-            background: #e8f5e8;
-        }
-
-        .upload-area.dragover {
-            background: #d4edd4;
-            border-color: #0d4d0d;
-        }
-
-        .upload-icon {
-            font-size: 3em;
-            margin-bottom: 15px;
-        }
-
-        .file-input {
-            display: none;
-        }
-
-        .btn {
-            background: linear-gradient(135deg, #1a5e1a 0%, #2d8a2d 100%);
-            color: white;
-            border: none;
-            padding: 12px 30px;
-            border-radius: 25px;
-            font-size: 1em;
+            margin: 10px 0;
             cursor: pointer;
-            transition: all 0.3s ease;
-            margin: 5px;
-            font-weight: 600;
         }
 
-        .btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(26, 94, 26, 0.4);
-        }
-
-        .btn-danger {
-            background: linear-gradient(135deg, #dc3545, #c82333);
-        }
-
-        .btn-warning {
-            background: linear-gradient(135deg, #ffc107, #e0a800);
-            color: #333;
-        }
-
-        .btn-success {
-            background: linear-gradient(135deg, #28a745, #218838);
-        }
-
-        .btn-secondary {
-            background: #666;
-        }
-
-        .form-group {
-            margin-top: 20px;
-        }
-
-        .form-group label {
-            display: block;
-            color: #333;
-            font-weight: 600;
-            margin-bottom: 5px;
-        }
-
-        .form-group input,
-        .form-group select {
-            width: 100%;
-            padding: 12px;
-            border: 2px solid #ddd;
-            border-radius: 8px;
-            font-size: 1em;
-            transition: border-color 0.3s ease;
-        }
-
-        .form-group input:focus,
-        .form-group select:focus {
-            outline: none;
-            border-color: #2d8a2d;
-        }
-
-        .search-section {
-            background: white;
-            border-radius: 15px;
-            padding: 20px;
-            margin-bottom: 30px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-        }
-
-        .search-bar {
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
-        }
-
-        .search-input {
-            flex: 1;
-            min-width: 200px;
-            padding: 12px 20px;
-            border: 2px solid #ddd;
-            border-radius: 25px;
-            font-size: 1em;
-            transition: border-color 0.3s ease;
-        }
-
-        .search-input:focus {
-            outline: none;
-            border-color: #2d8a2d;
-        }
-
-        .category-select {
-            padding: 12px 20px;
-            border: 2px solid #ddd;
-            border-radius: 25px;
-            font-size: 1em;
-            background: white;
+        .cover-upload-area {
+            border: 2px dashed #ffd700;
+            background: #fffdf0;
+            border-radius: 10px;
+            padding: 15px;
+            text-align: center;
+            margin: 10px 0;
             cursor: pointer;
+        }
+
+        .cover-preview {
+            max-width: 150px;
+            max-height: 200px;
+            margin: 10px auto;
+            border-radius: 10px;
         }
 
         .books-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 20px;
-            margin-top: 20px;
+            grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
         }
 
         .book-card {
             background: white;
-            border-radius: 15px;
-            padding: 25px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
-            cursor: pointer;
-            border-left: 5px solid #2d8a2d;
-            position: relative;
-        }
-
-        .book-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
-            border-left-color: #ffd700;
-        }
-
-        .book-card.pending {
-            border-left-color: #ffc107;
-            background: #fffdf0;
-        }
-
-        .pending-badge {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            background: #ffc107;
-            color: #333;
-            padding: 3px 10px;
             border-radius: 10px;
-            font-size: 0.75em;
-            font-weight: bold;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            border-bottom: 4px solid #2d8a2d;
         }
 
-        .book-icon {
+        .book-cover {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
             font-size: 3em;
-            text-align: center;
-            margin-bottom: 15px;
+            color: white;
+        }
+
+        .book-cover img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .book-details {
+            padding: 12px;
         }
 
         .book-title {
-            font-size: 1.2em;
+            font-size: 0.95em;
             font-weight: bold;
             color: #1a5e1a;
-            margin-bottom: 10px;
-            line-height: 1.4;
+            margin-bottom: 5px;
         }
 
         .book-category {
             display: inline-block;
             background: #e8f5e8;
             color: #1a5e1a;
-            padding: 5px 15px;
-            border-radius: 15px;
-            font-size: 0.85em;
-            font-weight: 600;
-            margin-bottom: 10px;
+            padding: 3px 10px;
+            border-radius: 10px;
+            font-size: 0.75em;
+            margin-bottom: 5px;
         }
 
         .book-info {
             color: #666;
-            font-size: 0.9em;
-        }
-
-        .book-info p {
-            margin: 5px 0;
-        }
-
-        .stats-bar {
-            background: white;
-            border-radius: 15px;
-            padding: 20px;
-            margin-top: 30px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-            text-align: center;
-        }
-
-        .stat-item {
-            flex: 1;
-            min-width: 150px;
-            padding: 10px;
-        }
-
-        .stat-number {
-            font-size: 2em;
-            font-weight: bold;
-            color: #1a5e1a;
-        }
-
-        .stat-label {
-            color: #666;
-            font-size: 0.9em;
-        }
-
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.6);
-            justify-content: center;
-            align-items: center;
-            z-index: 1000;
-            backdrop-filter: blur(5px);
-        }
-
-        .modal-content {
-            background: white;
-            border-radius: 20px;
-            padding: 40px;
-            max-width: 500px;
-            width: 90%;
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
-            animation: slideIn 0.3s ease;
-            max-height: 80vh;
-            overflow-y: auto;
-        }
-
-        .admin-modal {
-            max-width: 800px;
-        }
-
-        @keyframes slideIn {
-            from {
-                transform: translateY(-50px);
-                opacity: 0;
-            }
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
-
-        .modal-icon {
-            font-size: 4em;
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        .share-buttons {
-            display: flex;
-            gap: 10px;
-            margin-top: 20px;
-            flex-wrap: wrap;
-        }
-
-        .admin-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 20px 0;
-        }
-
-        .admin-table th {
-            background: #1a5e1a;
-            color: white;
-            padding: 10px;
-            text-align: left;
-        }
-
-        .admin-table td {
-            padding: 10px;
-            border-bottom: 1px solid #ddd;
-        }
-
-        .admin-table tr:hover {
-            background: #f5f5f5;
-        }
-
-        .empty-state {
-            grid-column: 1/-1;
-            text-align: center;
-            padding: 60px 20px;
-            background: white;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        .empty-icon {
-            font-size: 5em;
-            margin-bottom: 20px;
-            animation: float 3s ease-in-out infinite;
+            font-size: 0.75em;
         }
 
         .hidden {
             display: none;
         }
 
-        @media (max-width: 768px) {
-            .container {
-                padding: 10px;
-            }
-            
+        .pending-badge {
+            background: #ffc107;
+            color: #333;
+            padding: 3px 8px;
+            border-radius: 8px;
+            font-size: 0.7em;
+            font-weight: bold;
+        }
+
+        .book-list-item {
+            background: #fffdf0;
+            border: 1px solid #ffc107;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 10px 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.85em;
+        }
+
+        th {
+            background: #1a5e1a;
+            color: white;
+            padding: 10px;
+            text-align: left;
+        }
+
+        td {
+            padding: 8px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .notification {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: white;
+            padding: 15px 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            z-index: 9999;
+            border-left: 5px solid #2d8a2d;
+            font-weight: bold;
+            max-width: 300px;
+        }
+
+        @media (max-width: 480px) {
             .library-name {
-                font-size: 2em;
+                font-size: 1.8em;
             }
             
             .books-grid {
-                grid-template-columns: 1fr;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 10px;
             }
             
-            .stats-bar {
+            .book-cover {
+                height: 150px;
+            }
+            
+            .main-buttons {
                 flex-direction: column;
             }
             
-            .stat-item {
-                margin: 10px 0;
-            }
-
-            .admin-table {
-                font-size: 0.8em;
+            .big-btn {
+                width: 100%;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Hidden Admin Button -->
-    <button class="admin-btn" onclick="showAdminLogin()" title="Admin Panel">🔐 Admin</button>
-
     <div class="container">
         <header>
             <span class="location-badge">📍 South Sudan</span>
-            <div class="logo-container">
-                <span class="logo-icon">📚</span>
-                <h1 class="library-name">Aweil Library</h1>
-            </div>
+            <h1 class="library-name">📚 Aweil Library</h1>
             <p class="tagline">"Knowledge for Liberation, Books for Everyone"</p>
-            <p class="motto">🌍 Free educational resources for our community in Aweil and beyond</p>
+            
+            <!-- BIG VISIBLE BUTTONS FOR MOBILE -->
+            <div class="main-buttons">
+                <button class="big-btn upload-btn" onclick="showUploadSection()">
+                    📤 Upload Book
+                </button>
+                <button class="big-btn admin-btn" onclick="showAdminSection()">
+                    🔐 Admin Panel
+                </button>
+            </div>
         </header>
 
-        <div class="upload-section">
-            <h2 class="section-title">📤 Share a Book with Your Community</h2>
-            <p class="section-subtitle">Help your brothers and sisters learn. Upload textbooks, storybooks, or any educational material.</p>
-            
-            <!-- Password Protection -->
-            <div id="passwordGate" class="password-overlay">
-                <h3>🔒 Contributor Access</h3>
-                <p style="color: #666; margin: 15px 0;">Enter the upload password to share books</p>
-                <input type="password" id="uploadPassword" class="password-input" placeholder="Enter password">
-                <br>
-                <button class="btn" onclick="verifyUploadPassword()">🔓 Unlock Upload</button>
-                <p style="color: #999; font-size: 0.85em; margin-top: 15px;">
-                    Don't have the password? Contact the library administrator.
-                </p>
-            </div>
-
-            <!-- Upload Form (Initially Hidden) -->
-            <div id="uploadForm" class="hidden">
-                <div class="upload-area" id="uploadArea">
-                    <div class="upload-icon">📁</div>
-                    <h3>Click to upload or drag and drop your book here</h3>
-                    <p style="color: #888;">PDF, DOC, DOCX, TXT, EPUB (Max 50MB recommended)</p>
-                    <input type="file" id="fileInput" class="file-input" accept=".pdf,.doc,.docx,.txt,.epub">
-                </div>
-
-                <div class="form-group">
-                    <label>📖 Book Title *</label>
-                    <input type="text" id="bookTitle" placeholder="e.g., Mathematics Form 3" required>
-                </div>
-                <div class="form-group">
-                    <label>✍️ Author / Publisher</label>
-                    <input type="text" id="bookAuthor" placeholder="e.g., John Maker">
-                </div>
-                <div class="form-group">
-                    <label>👤 Your Name (Contributor)</label>
-                    <input type="text" id="contributorName" placeholder="Your name">
-                </div>
-                <div class="form-group">
-                    <label>📂 Category</label>
-                    <select id="bookCategory">
-                        <option value="">Select a category</option>
-                        <option value="Mathematics">Mathematics</option>
-                        <option value="Science">Science (Physics, Chemistry, Biology)</option>
-                        <option value="English">English Language & Literature</option>
-                        <option value="History">History & Geography</option>
-                        <option value="Arabic">Arabic Language</option>
-                        <option value="Computer">Computer & Technology</option>
-                        <option value="Agriculture">Agriculture & Farming</option>
-                        <option value="Business">Business & Economics</option>
-                        <option value="Health">Health & Medicine</option>
-                        <option value="Religion">Religious Studies</option>
-                        <option value="Story">Storybooks & Novels</option>
-                        <option value="Other">Other Subjects</option>
-                    </select>
-                </div>
-                <button class="btn" onclick="uploadBook()" style="margin-top: 20px; width: 100%; font-size: 1.1em;">
-                    📤 Submit Book for Review
-                </button>
-                <p style="text-align: center; margin-top: 10px; color: #888; font-size: 0.9em;">
-                    ⚠️ Your upload will be reviewed by an admin before appearing in the library.
-                </p>
-            </div>
+        <!-- SEARCH SECTION (Always Visible) -->
+        <div class="section">
+            <h3 class="section-title">🔍 Find Books</h3>
+            <input type="text" id="searchInput" placeholder="Search by title, author, or subject..." onkeyup="searchBooks()">
+            <select id="categoryFilter" onchange="searchBooks()">
+                <option value="">📂 All Categories</option>
+                <option value="Mathematics">Mathematics</option>
+                <option value="Science">Science</option>
+                <option value="English">English</option>
+                <option value="History">History & Geography</option>
+                <option value="Arabic">Arabic</option>
+                <option value="Computer">Computer & Technology</option>
+                <option value="Agriculture">Agriculture</option>
+                <option value="Business">Business</option>
+                <option value="Health">Health</option>
+                <option value="Religion">Religious Studies</option>
+                <option value="Story">Storybooks</option>
+                <option value="Other">Other</option>
+            </select>
         </div>
 
-        <div class="search-section">
-            <h2 class="section-title">🔍 Find Books in Our Library</h2>
-            <div class="search-bar">
-                <input type="text" id="searchInput" class="search-input" placeholder="Search by title, author, or subject..." onkeyup="searchBooks()">
-                <select id="categoryFilter" class="category-select" onchange="searchBooks()">
-                    <option value="">📂 All Categories</option>
+        <!-- BOOKS DISPLAY -->
+        <div class="books-grid" id="booksGrid"></div>
+
+        <!-- STATS -->
+        <div class="section" style="text-align: center;">
+            <p>📚 <strong id="bookCount">0</strong> Books | ⏳ <strong id="pendingCount">0</strong> Pending | 📂 <strong id="categoryCount">0</strong> Categories</p>
+        </div>
+
+        <!-- UPLOAD SECTION (Hidden by default) -->
+        <div class="section hidden" id="uploadSection">
+            <h3 class="section-title">📤 Upload a Book</h3>
+            
+            <!-- Password Gate -->
+            <div id="uploadPasswordGate" class="password-box">
+                <h4>🔒 Enter Upload Password</h4>
+                <input type="password" id="uploadPasswordInput" placeholder="Type password here">
+                <button class="btn" onclick="unlockUpload()">🔓 Unlock</button>
+                <p style="color: #888; font-size: 0.85em; margin-top: 10px;">
+                    Need password? Contact the administrator.
+                </p>
+            </div>
+
+            <!-- Upload Form (Hidden until password entered) -->
+            <div id="uploadFormContent" class="hidden">
+                <!-- Book File -->
+                <div class="upload-area" id="bookUploadArea" onclick="document.getElementById('bookFileInput').click()">
+                    <span style="font-size: 2em;">📁</span>
+                    <p id="bookFileLabel">Tap to select book file</p>
+                    <p style="color: #888; font-size: 0.85em;">PDF, DOC, TXT, EPUB (Max 50MB)</p>
+                    <input type="file" id="bookFileInput" accept=".pdf,.doc,.docx,.txt,.epub" style="display: none;" onchange="bookFileSelected(this)">
+                </div>
+
+                <!-- Cover Image -->
+                <div class="cover-upload-area" id="coverUploadArea" onclick="document.getElementById('coverFileInput').click()">
+                    <span style="font-size: 2em;">🖼️</span>
+                    <p>Tap to add cover image (optional)</p>
+                    <img id="coverPreviewImg" class="cover-preview hidden" src="" alt="Preview">
+                    <input type="file" id="coverFileInput" accept="image/*" style="display: none;" onchange="coverFileSelected(this)">
+                </div>
+
+                <input type="text" id="bookTitleInput" placeholder="Book Title *">
+                <input type="text" id="bookAuthorInput" placeholder="Author Name">
+                <input type="text" id="contributorNameInput" placeholder="Your Name">
+                <textarea id="bookDescriptionInput" placeholder="Book description (optional)"></textarea>
+                <select id="bookCategoryInput">
+                    <option value="">Select Category</option>
                     <option value="Mathematics">Mathematics</option>
                     <option value="Science">Science</option>
                     <option value="English">English</option>
@@ -609,101 +423,67 @@
                     <option value="Story">Storybooks</option>
                     <option value="Other">Other</option>
                 </select>
+
+                <button class="btn" onclick="submitBook()">📤 Submit for Review</button>
+                <button class="btn btn-delete" onclick="hideUploadSection()">❌ Cancel</button>
+                <p style="text-align: center; color: #888; font-size: 0.85em; margin-top: 10px;">
+                    ⚠️ Book will be reviewed before appearing in library.
+                </p>
             </div>
         </div>
 
-        <div class="books-grid" id="booksGrid">
-            <!-- Books will be displayed here -->
-        </div>
-
-        <div class="stats-bar">
-            <div class="stat-item">
-                <div class="stat-number" id="bookCount">0</div>
-                <div class="stat-label">📚 Approved Books</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number" id="pendingCount">0</div>
-                <div class="stat-label">⏳ Pending Review</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number" id="categoryCount">0</div>
-                <div class="stat-label">📂 Categories</div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Book Detail Modal -->
-    <div class="modal" id="bookModal">
-        <div class="modal-content">
-            <div class="modal-icon" id="modalIcon">📚</div>
-            <h2 id="modalTitle" style="color: #1a5e1a; margin-bottom: 10px;"></h2>
-            <p id="modalAuthor" style="color: #666;"></p>
-            <p id="modalCategory" style="margin: 15px 0;"></p>
-            <p id="modalFileInfo" style="color: #888; font-size: 0.9em;"></p>
-            <div class="share-buttons">
-                <button class="btn" id="downloadBtn" style="flex: 1;">📥 Download Book</button>
-                <button class="btn btn-secondary" onclick="closeModal()">✕ Close</button>
-            </div>
-            <p style="text-align: center; margin-top: 15px; color: #1a5e1a; font-style: italic;">
-                "Education is the most powerful weapon you can use to change the world."
-            </p>
-        </div>
-    </div>
-
-    <!-- Admin Login Modal -->
-    <div class="modal" id="adminLoginModal">
-        <div class="modal-content">
-            <h2 style="color: #1a5e1a;">🔐 Admin Login</h2>
-            <p style="color: #666; margin: 15px 0;">Enter the admin password to access the dashboard</p>
-            <input type="password" id="adminPassword" class="password-input" placeholder="Admin password" style="width: 100%;">
-            <div class="share-buttons">
-                <button class="btn" onclick="verifyAdminPassword()" style="flex: 1;">🔓 Login</button>
-                <button class="btn btn-secondary" onclick="closeAdminLogin()">Cancel</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Admin Dashboard Modal -->
-    <div class="modal" id="adminDashboardModal">
-        <div class="modal-content admin-modal">
-            <h2 style="color: #1a5e1a;">📊 Admin Dashboard - Aweil Library</h2>
+        <!-- ADMIN SECTION (Hidden by default) -->
+        <div class="section hidden" id="adminSection">
+            <h3 class="section-title">🔐 Admin Panel</h3>
             
-            <div style="margin: 20px 0;">
-                <h3>📈 Quick Stats</h3>
-                <p>✅ Approved Books: <strong id="adminApprovedCount">0</strong></p>
-                <p>⏳ Pending Review: <strong id="adminPendingCount">0</strong></p>
-                <p>👥 Contributors: <strong id="adminContributorsCount">0</strong></p>
+            <!-- Admin Login -->
+            <div id="adminLoginGate" class="password-box">
+                <h4>Enter Admin Password</h4>
+                <input type="password" id="adminPasswordInput" placeholder="Type admin password">
+                <button class="btn" onclick="adminLogin()">🔓 Login</button>
             </div>
 
-            <h3>⏳ Books Pending Approval</h3>
-            <div id="pendingBooksList" style="margin: 20px 0;">
-                <p style="color: #666;">No books waiting for review.</p>
-            </div>
+            <!-- Admin Dashboard (Hidden until login) -->
+            <div id="adminDashboardContent" class="hidden">
+                <div style="margin: 15px 0; text-align: center;">
+                    <p>✅ Approved: <strong id="adminApprovedCount">0</strong></p>
+                    <p>⏳ Pending: <strong id="adminPendingCount">0</strong></p>
+                    <p>👥 Contributors: <strong id="adminContributorsCount">0</strong></p>
+                </div>
 
-            <h3>📚 All Books (Approved)</h3>
-            <div style="overflow-x: auto;">
-                <table class="admin-table">
-                    <thead>
-                        <tr>
-                            <th>Title</th>
-                            <th>Author</th>
-                            <th>Contributor</th>
-                            <th>Category</th>
-                            <th>Date</th>
-                            <th>Action</th>
-                        </tr>
-                    </thead>
-                    <tbody id="approvedBooksTable">
-                        <tr>
-                            <td colspan="6" style="text-align: center; color: #666;">No approved books yet.</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+                <h4>⏳ Pending Approval</h4>
+                <div id="pendingBooksContainer"></div>
 
-            <div class="share-buttons">
-                <button class="btn btn-secondary" onclick="closeAdminDashboard()">Close Dashboard</button>
-                <button class="btn btn-danger" onclick="logoutAdmin()">🚪 Logout</button>
+                <h4 style="margin-top: 20px;">📚 All Approved Books</h4>
+                <div style="overflow-x: auto;">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Title</th>
+                                <th>Author</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="approvedBooksTable"></tbody>
+                    </table>
+                </div>
+
+                <button class="btn btn-delete" onclick="hideAdminSection()">❌ Close Admin</button>
+            </div>
+        </div>
+
+        <!-- BOOK DETAIL MODAL -->
+        <div id="bookDetailModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); z-index: 9999; overflow-y: auto; padding: 20px;">
+            <div style="background: white; border-radius: 15px; padding: 20px; max-width: 500px; margin: 20px auto;">
+                <img id="detailCover" style="width: 100%; max-height: 300px; object-fit: contain; border-radius: 10px; margin-bottom: 15px;">
+                <div id="detailDefaultCover" style="width: 100%; height: 200px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 4em; color: white; margin-bottom: 15px;"></div>
+                <h3 id="detailTitle" style="color: #1a5e1a;"></h3>
+                <p id="detailAuthor" style="color: #666;"></p>
+                <p id="detailDescription" style="color: #555; margin: 10px 0;"></p>
+                <p id="detailCategory" style="margin: 10px 0;"></p>
+                <p id="detailFileInfo" style="color: #888; font-size: 0.9em;"></p>
+                <button class="btn" id="downloadBookBtn">📥 Download</button>
+                <button class="btn btn-delete" onclick="document.getElementById('bookDetailModal').style.display='none'">Close</button>
             </div>
         </div>
     </div>
@@ -711,261 +491,251 @@
     <script>
         // ==================== CONFIGURATION ====================
         // CHANGE THESE PASSWORDS!
-        const UPLOAD_PASSWORD = "aweil2024";  // Password for contributors to upload
-        const ADMIN_PASSWORD = "admin2024";    // Password for admin dashboard
+        const UPLOAD_PASSWORD = "aweil2024";  // Change this!
+        const ADMIN_PASSWORD = "admin2024";    // Change this!
         
-        // ==================== DATA MANAGEMENT ====================
+        // ==================== DATA ====================
         let books = JSON.parse(localStorage.getItem('aweilLibraryBooks')) || [];
-        let isUploadUnlocked = false;
-        let isAdminLoggedIn = false;
         let currentBook = null;
-        let sessionTimer = null;
+        let tempCoverData = null;
+        let tempBookFile = null;
+        let uploadUnlocked = false;
+        let adminLoggedIn = false;
 
-        // Display books on page load
-        displayBooks(books);
+        // Display books on load
+        showBooks();
         updateStats();
 
-        // ==================== UPLOAD PASSWORD PROTECTION ====================
-        function verifyUploadPassword() {
-            const password = document.getElementById('uploadPassword').value;
-            
+        // ==================== NAVIGATION ====================
+        function showUploadSection() {
+            document.getElementById('uploadSection').classList.remove('hidden');
+            document.getElementById('adminSection').classList.add('hidden');
+            document.getElementById('uploadSection').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function hideUploadSection() {
+            document.getElementById('uploadSection').classList.add('hidden');
+            uploadUnlocked = false;
+            document.getElementById('uploadPasswordGate').classList.remove('hidden');
+            document.getElementById('uploadFormContent').classList.add('hidden');
+            document.getElementById('uploadPasswordInput').value = '';
+            tempCoverData = null;
+            tempBookFile = null;
+            document.getElementById('coverPreviewImg').classList.add('hidden');
+            document.getElementById('bookFileLabel').textContent = 'Tap to select book file';
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function showAdminSection() {
+            document.getElementById('adminSection').classList.remove('hidden');
+            document.getElementById('uploadSection').classList.add('hidden');
+            document.getElementById('adminSection').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function hideAdminSection() {
+            document.getElementById('adminSection').classList.add('hidden');
+            adminLoggedIn = false;
+            document.getElementById('adminLoginGate').classList.remove('hidden');
+            document.getElementById('adminDashboardContent').classList.add('hidden');
+            document.getElementById('adminPasswordInput').value = '';
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // ==================== UPLOAD FUNCTIONS ====================
+        function unlockUpload() {
+            const password = document.getElementById('uploadPasswordInput').value;
             if (password === UPLOAD_PASSWORD) {
-                isUploadUnlocked = true;
-                document.getElementById('passwordGate').classList.add('hidden');
-                document.getElementById('uploadForm').classList.remove('hidden');
-                showNotification('✅ Upload access granted! Your session will expire in 30 minutes.');
-                
-                // Auto-lock after 30 minutes
-                clearTimeout(sessionTimer);
-                sessionTimer = setTimeout(() => {
-                    lockUpload();
-                    showNotification('⏰ Upload session expired. Please enter password again.');
-                }, 30 * 60 * 1000);
+                uploadUnlocked = true;
+                document.getElementById('uploadPasswordGate').classList.add('hidden');
+                document.getElementById('uploadFormContent').classList.remove('hidden');
+                showToast('✅ Access granted!');
             } else {
-                alert('❌ Incorrect password! Please try again or contact the administrator.');
-                document.getElementById('uploadPassword').value = '';
+                showToast('❌ Wrong password!');
+                document.getElementById('uploadPasswordInput').value = '';
             }
         }
 
-        function lockUpload() {
-            isUploadUnlocked = false;
-            document.getElementById('passwordGate').classList.remove('hidden');
-            document.getElementById('uploadForm').classList.add('hidden');
-            document.getElementById('uploadPassword').value = '';
+        function bookFileSelected(input) {
+            if (input.files.length > 0) {
+                tempBookFile = input.files[0];
+                document.getElementById('bookFileLabel').textContent = '✅ ' + tempBookFile.name;
+            }
         }
 
-        // ==================== UPLOAD AREA FUNCTIONALITY ====================
-        const uploadArea = document.getElementById('uploadArea');
-        const fileInput = document.getElementById('fileInput');
-
-        uploadArea.addEventListener('click', () => fileInput.click());
-
-        uploadArea.addEventListener('dragover', (e) => {
-            e.preventDefault();
-            uploadArea.classList.add('dragover');
-        });
-
-        uploadArea.addEventListener('dragleave', () => {
-            uploadArea.classList.remove('dragover');
-        });
-
-        uploadArea.addEventListener('drop', (e) => {
-            e.preventDefault();
-            uploadArea.classList.remove('dragover');
-            const files = e.dataTransfer.files;
-            if (files.length > 0) {
-                fileInput.files = files;
-                uploadArea.querySelector('h3').textContent = `✅ Selected: ${files[0].name}`;
-            }
-        });
-
-        fileInput.addEventListener('change', (e) => {
-            if (e.target.files.length > 0) {
-                uploadArea.querySelector('h3').textContent = `✅ Selected: ${e.target.files[0].name}`;
-            }
-        });
-
-        // ==================== BOOK UPLOAD ====================
-        function uploadBook() {
-            if (!isUploadUnlocked) {
-                alert('❌ Your upload session has expired. Please enter the password again.');
-                lockUpload();
-                return;
-            }
-
-            const title = document.getElementById('bookTitle').value.trim();
-            const author = document.getElementById('bookAuthor').value.trim();
-            const contributor = document.getElementById('contributorName').value.trim();
-            const category = document.getElementById('bookCategory').value;
-            const file = fileInput.files[0];
-
-            if (!title) {
-                alert('❌ Please enter a book title');
-                return;
-            }
-
-            if (!file) {
-                alert('❌ Please select a file to upload');
-                return;
-            }
-
-            if (file.size > 50 * 1024 * 1024) {
-                if (!confirm('⚠️ This file is larger than 50MB. Large files may be slow to download. Continue?')) {
+        function coverFileSelected(input) {
+            if (input.files.length > 0) {
+                const file = input.files[0];
+                if (file.size > 5 * 1024 * 1024) {
+                    showToast('⚠️ Image too large! Use under 5MB.');
                     return;
                 }
+                const reader = new FileReader();
+                reader.onload = (e) => {
+                    tempCoverData = e.target.result;
+                    document.getElementById('coverPreviewImg').src = tempCoverData;
+                    document.getElementById('coverPreviewImg').classList.remove('hidden');
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+
+        function submitBook() {
+            if (!uploadUnlocked) {
+                showToast('❌ Session expired. Please re-enter password.');
+                hideUploadSection();
+                return;
             }
 
-            const fileURL = URL.createObjectURL(file);
-            
-            const newBook = {
+            const title = document.getElementById('bookTitleInput').value.trim();
+            const author = document.getElementById('bookAuthorInput').value.trim();
+            const contributor = document.getElementById('contributorNameInput').value.trim();
+            const description = document.getElementById('bookDescriptionInput').value.trim();
+            const category = document.getElementById('bookCategoryInput').value;
+
+            if (!title) {
+                showToast('❌ Please enter a book title');
+                return;
+            }
+
+            if (!tempBookFile) {
+                showToast('❌ Please select a book file');
+                return;
+            }
+
+            const bookData = {
                 id: Date.now(),
                 title: title,
-                author: author || 'Unknown Author',
+                author: author || 'Unknown',
                 contributor: contributor || 'Anonymous',
+                description: description,
                 category: category || 'Other',
-                fileName: file.name,
-                fileSize: formatFileSize(file.size),
-                fileType: file.type,
-                fileURL: fileURL,
-                uploadDate: new Date().toLocaleDateString('en-GB', {
-                    day: 'numeric',
-                    month: 'long',
-                    year: 'numeric'
-                }),
-                status: 'pending', // 'pending' or 'approved'
-                uploadTimestamp: new Date().toISOString()
+                fileName: tempBookFile.name,
+                fileSize: (tempBookFile.size / 1024 / 1024).toFixed(2) + ' MB',
+                fileType: tempBookFile.type,
+                fileURL: URL.createObjectURL(tempBookFile),
+                coverImage: tempCoverData,
+                uploadDate: new Date().toLocaleDateString(),
+                status: 'pending'
             };
 
-            books.unshift(newBook);
+            books.unshift(bookData);
             localStorage.setItem('aweilLibraryBooks', JSON.stringify(books));
-            
+
             // Clear form
-            document.getElementById('bookTitle').value = '';
-            document.getElementById('bookAuthor').value = '';
-            document.getElementById('contributorName').value = '';
-            document.getElementById('bookCategory').value = '';
-            fileInput.value = '';
-            uploadArea.querySelector('h3').textContent = 'Click to upload or drag and drop your book here';
-            
-            displayBooks(books);
+            document.getElementById('bookTitleInput').value = '';
+            document.getElementById('bookAuthorInput').value = '';
+            document.getElementById('contributorNameInput').value = '';
+            document.getElementById('bookDescriptionInput').value = '';
+            document.getElementById('bookCategoryInput').value = '';
+            document.getElementById('bookFileInput').value = '';
+            document.getElementById('coverFileInput').value = '';
+            tempBookFile = null;
+            tempCoverData = null;
+            document.getElementById('coverPreviewImg').classList.add('hidden');
+            document.getElementById('bookFileLabel').textContent = 'Tap to select book file';
+
+            showBooks();
             updateStats();
-            
-            showNotification('✅ Book submitted for review! An admin will approve it soon.');
+            showToast('✅ Book submitted for review!');
+            hideUploadSection();
         }
 
         // ==================== DISPLAY BOOKS ====================
-        function displayBooks(booksArray) {
-            const booksGrid = document.getElementById('booksGrid');
-            
-            // Only show approved books to public
-            const approvedBooks = booksArray.filter(book => book.status === 'approved');
-            
-            if (approvedBooks.length === 0) {
-                booksGrid.innerHTML = `
-                    <div class="empty-state">
-                        <div class="empty-icon">📚</div>
-                        <h2 style="color: #1a5e1a;">Aweil Library</h2>
-                        <p style="color: #666; margin: 15px 0;">No approved books yet.</p>
-                        <p style="color: #2d8a2d; font-weight: 600;">
-                            ${booksArray.filter(b => b.status === 'pending').length > 0 ? 
-                                '📝 There are books pending review. Check back soon!' : 
-                                'Be the first to upload a book and help your community learn!'}
-                        </p>
+        function showBooks(filteredBooks = null) {
+            const grid = document.getElementById('booksGrid');
+            const displayBooks = filteredBooks || books.filter(b => b.status === 'approved');
+
+            if (displayBooks.length === 0) {
+                grid.innerHTML = `
+                    <div style="grid-column: 1/-1; text-align: center; padding: 40px; background: white; border-radius: 15px;">
+                        <div style="font-size: 4em;">📚</div>
+                        <h3>Aweil Library</h3>
+                        <p style="color: #666;">No books available yet. Check back soon!</p>
                     </div>
                 `;
                 return;
             }
 
-            booksGrid.innerHTML = approvedBooks.map(book => `
-                <div class="book-card" onclick="openBook(${book.id})">
-                    <div class="book-icon">${getBookIcon(book.fileType, book.category)}</div>
-                    <div class="book-title">${escapeHtml(book.title)}</div>
-                    <div class="book-category">📂 ${escapeHtml(book.category)}</div>
-                    <div class="book-info">
-                        <p>✍️ ${escapeHtml(book.author)}</p>
-                        <p>📄 ${escapeHtml(book.fileName)}</p>
-                        <p>📦 ${book.fileSize}</p>
-                        <p>📅 ${book.uploadDate}</p>
+            grid.innerHTML = displayBooks.map(book => `
+                <div class="book-card" onclick="openBookDetail(${book.id})">
+                    <div class="book-cover">
+                        ${book.coverImage ? 
+                            `<img src="${book.coverImage}" alt="${book.title}">` :
+                            `<span>${getCategoryEmoji(book.category)}</span>`
+                        }
+                    </div>
+                    <div class="book-details">
+                        <div class="book-title">${book.title}</div>
+                        <div class="book-category">${book.category}</div>
+                        <div class="book-info">
+                            <p>✍️ ${book.author}</p>
+                            <p>📦 ${book.fileSize}</p>
+                        </div>
                     </div>
                 </div>
             `).join('');
         }
 
-        function getBookIcon(fileType, category) {
-            if (category === 'Science') return '🔬';
-            if (category === 'Mathematics') return '🔢';
-            if (category === 'English') return '📖';
-            if (category === 'History') return '📜';
-            if (category === 'Arabic') return '📝';
-            if (category === 'Computer') return '💻';
-            if (category === 'Agriculture') return '🌾';
-            if (category === 'Health') return '🏥';
-            if (category === 'Story') return '📚';
-            if (fileType.includes('pdf')) return '📕';
-            if (fileType.includes('doc')) return '📘';
-            if (fileType.includes('epub')) return '📗';
-            return '📙';
+        function getCategoryEmoji(category) {
+            const emojis = {
+                'Mathematics': '🔢', 'Science': '🔬', 'English': '📖',
+                'History': '📜', 'Arabic': '📝', 'Computer': '💻',
+                'Agriculture': '🌾', 'Business': '💼', 'Health': '🏥',
+                'Religion': '🙏', 'Story': '📚', 'Other': '📙'
+            };
+            return emojis[category] || '📙';
         }
 
-        function escapeHtml(text) {
-            const div = document.createElement('div');
-            div.textContent = text;
-            return div.innerHTML;
-        }
-
-        function formatFileSize(bytes) {
-            if (bytes === 0) return '0 Bytes';
-            const k = 1024;
-            const sizes = ['Bytes', 'KB', 'MB', 'GB'];
-            const i = Math.floor(Math.log(bytes) / Math.log(k));
-            return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
-        }
-
-        // ==================== SEARCH & FILTER ====================
         function searchBooks() {
-            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
-            const categoryFilter = document.getElementById('categoryFilter').value;
+            const search = document.getElementById('searchInput').value.toLowerCase();
+            const category = document.getElementById('categoryFilter').value;
             
-            let filteredBooks = books.filter(book => book.status === 'approved');
+            let filtered = books.filter(b => b.status === 'approved');
             
-            if (searchTerm) {
-                filteredBooks = filteredBooks.filter(book => 
-                    book.title.toLowerCase().includes(searchTerm) ||
-                    book.author.toLowerCase().includes(searchTerm) ||
-                    book.category.toLowerCase().includes(searchTerm) ||
-                    book.fileName.toLowerCase().includes(searchTerm)
+            if (search) {
+                filtered = filtered.filter(b => 
+                    b.title.toLowerCase().includes(search) ||
+                    b.author.toLowerCase().includes(search) ||
+                    b.category.toLowerCase().includes(search)
                 );
             }
             
-            if (categoryFilter) {
-                filteredBooks = filteredBooks.filter(book => 
-                    book.category === categoryFilter
-                );
+            if (category) {
+                filtered = filtered.filter(b => b.category === category);
             }
             
-            displayBooks(filteredBooks);
+            showBooks(filtered);
         }
 
-        // ==================== BOOK MODAL ====================
-        function openBook(bookId) {
-            currentBook = books.find(book => book.id === bookId);
+        // ==================== BOOK DETAIL ====================
+        function openBookDetail(bookId) {
+            currentBook = books.find(b => b.id === bookId);
             if (!currentBook || currentBook.status !== 'approved') return;
+
+            const modal = document.getElementById('bookDetailModal');
+            document.getElementById('detailTitle').textContent = currentBook.title;
+            document.getElementById('detailAuthor').textContent = '✍️ ' + currentBook.author;
+            document.getElementById('detailDescription').textContent = currentBook.description || '';
+            document.getElementById('detailCategory').innerHTML = '<span class="book-category">📂 ' + currentBook.category + '</span>';
+            document.getElementById('detailFileInfo').textContent = '📄 ' + currentBook.fileName + ' | 📦 ' + currentBook.fileSize;
+
+            const coverImg = document.getElementById('detailCover');
+            const defaultCover = document.getElementById('detailDefaultCover');
             
-            document.getElementById('modalIcon').textContent = getBookIcon(currentBook.fileType, currentBook.category);
-            document.getElementById('modalTitle').textContent = currentBook.title;
-            document.getElementById('modalAuthor').textContent = `✍️ Author: ${currentBook.author}`;
-            document.getElementById('modalCategory').innerHTML = `<span class="book-category">📂 ${currentBook.category}</span>`;
-            document.getElementById('modalFileInfo').textContent = `📄 ${currentBook.fileName} | 📦 ${currentBook.fileSize} | 📅 ${currentBook.uploadDate}`;
-            
-            document.getElementById('bookModal').style.display = 'flex';
+            if (currentBook.coverImage) {
+                coverImg.src = currentBook.coverImage;
+                coverImg.style.display = 'block';
+                defaultCover.style.display = 'none';
+            } else {
+                coverImg.style.display = 'none';
+                defaultCover.style.display = 'flex';
+                defaultCover.innerHTML = getCategoryEmoji(currentBook.category);
+            }
+
+            modal.style.display = 'block';
         }
 
-        function closeModal() {
-            document.getElementById('bookModal').style.display = 'none';
-            currentBook = null;
-        }
-
-        document.getElementById('downloadBtn').addEventListener('click', () => {
+        document.getElementById('downloadBookBtn').addEventListener('click', () => {
             if (currentBook) {
                 const link = document.createElement('a');
                 link.href = currentBook.fileURL;
@@ -973,92 +743,73 @@
                 document.body.appendChild(link);
                 link.click();
                 document.body.removeChild(link);
-                showNotification('📥 Downloading: ' + currentBook.title);
+                showToast('📥 Downloading: ' + currentBook.title);
+            }
+        });
+
+        // Close modal when clicking outside
+        document.getElementById('bookDetailModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                this.style.display = 'none';
             }
         });
 
         // ==================== ADMIN FUNCTIONS ====================
-        function showAdminLogin() {
-            document.getElementById('adminLoginModal').style.display = 'flex';
-            document.getElementById('adminPassword').value = '';
-        }
-
-        function closeAdminLogin() {
-            document.getElementById('adminLoginModal').style.display = 'none';
-        }
-
-        function verifyAdminPassword() {
-            const password = document.getElementById('adminPassword').value;
-            
+        function adminLogin() {
+            const password = document.getElementById('adminPasswordInput').value;
             if (password === ADMIN_PASSWORD) {
-                isAdminLoggedIn = true;
-                document.getElementById('adminLoginModal').style.display = 'none';
-                showAdminDashboard();
-                showNotification('✅ Welcome Admin!');
+                adminLoggedIn = true;
+                document.getElementById('adminLoginGate').classList.add('hidden');
+                document.getElementById('adminDashboardContent').classList.remove('hidden');
+                updateAdminDashboard();
+                showToast('✅ Welcome Admin!');
             } else {
-                alert('❌ Incorrect admin password!');
-                document.getElementById('adminPassword').value = '';
+                showToast('❌ Wrong password!');
+                document.getElementById('adminPasswordInput').value = '';
             }
         }
 
-        function showAdminDashboard() {
-            updateAdminDashboard();
-            document.getElementById('adminDashboardModal').style.display = 'flex';
-        }
-
-        function closeAdminDashboard() {
-            document.getElementById('adminDashboardModal').style.display = 'none';
-        }
-
-        function logoutAdmin() {
-            isAdminLoggedIn = false;
-            document.getElementById('adminDashboardModal').style.display = 'none';
-            showNotification('👋 Logged out from admin panel.');
-        }
-
         function updateAdminDashboard() {
-            // Update stats
-            const approvedBooks = books.filter(b => b.status === 'approved');
-            const pendingBooks = books.filter(b => b.status === 'pending');
-            const contributors = new Set(books.map(b => b.contributor).filter(c => c));
-            
-            document.getElementById('adminApprovedCount').textContent = approvedBooks.length;
-            document.getElementById('adminPendingCount').textContent = pendingBooks.length;
-            document.getElementById('adminContributorsCount').textContent = contributors.size;
-            
-            // Pending books list
-            const pendingDiv = document.getElementById('pendingBooksList');
-            if (pendingBooks.length === 0) {
-                pendingDiv.innerHTML = '<p style="color: #666;">No books waiting for review.</p>';
+            if (!adminLoggedIn) return;
+
+            const approved = books.filter(b => b.status === 'approved');
+            const pending = books.filter(b => b.status === 'pending');
+            const contributors = [...new Set(books.map(b => b.contributor).filter(c => c))];
+
+            document.getElementById('adminApprovedCount').textContent = approved.length;
+            document.getElementById('adminPendingCount').textContent = pending.length;
+            document.getElementById('adminContributorsCount').textContent = contributors.length;
+
+            // Pending books
+            const pendingContainer = document.getElementById('pendingBooksContainer');
+            if (pending.length === 0) {
+                pendingContainer.innerHTML = '<p style="color: #666; text-align: center;">No books pending review.</p>';
             } else {
-                pendingDiv.innerHTML = pendingBooks.map(book => `
-                    <div style="background: #fffdf0; border: 1px solid #ffc107; border-radius: 10px; padding: 15px; margin: 10px 0;">
-                        <strong>${escapeHtml(book.title)}</strong> by ${escapeHtml(book.author)}
-                        <br>📂 ${escapeHtml(book.category)} | 👤 ${escapeHtml(book.contributor)}
-                        <br>📄 ${escapeHtml(book.fileName)} | 📦 ${book.fileSize}
-                        <br>📅 ${book.uploadDate}
+                pendingContainer.innerHTML = pending.map(book => `
+                    <div class="book-list-item">
+                        <strong>${book.title}</strong> by ${book.author}
+                        <br>📂 ${book.category} | 👤 ${book.contributor}
+                        <br>📄 ${book.fileName} | 📦 ${book.fileSize}
+                        ${book.description ? '<br>📝 ' + book.description : ''}
                         <div style="margin-top: 10px;">
-                            <button class="btn btn-success" onclick="approveBook(${book.id})">✅ Approve</button>
-                            <button class="btn btn-danger" onclick="rejectBook(${book.id})">❌ Reject</button>
+                            <button class="btn btn-approve" onclick="approveBook(${book.id})">✅ Approve</button>
+                            <button class="btn btn-delete" onclick="rejectBook(${book.id})">❌ Reject</button>
                         </div>
                     </div>
                 `).join('');
             }
-            
+
             // Approved books table
             const tableBody = document.getElementById('approvedBooksTable');
-            if (approvedBooks.length === 0) {
-                tableBody.innerHTML = '<tr><td colspan="6" style="text-align: center; color: #666;">No approved books yet.</td></tr>';
+            if (approved.length === 0) {
+                tableBody.innerHTML = '<tr><td colspan="3" style="text-align: center;">No approved books</td></tr>';
             } else {
-                tableBody.innerHTML = approvedBooks.map(book => `
+                tableBody.innerHTML = approved.map(book => `
                     <tr>
-                        <td>${escapeHtml(book.title)}</td>
-                        <td>${escapeHtml(book.author)}</td>
-                        <td>${escapeHtml(book.contributor || 'N/A')}</td>
-                        <td>${escapeHtml(book.category)}</td>
-                        <td>${book.uploadDate}</td>
+                        <td>${book.title}</td>
+                        <td>${book.author}</td>
                         <td>
-                            <button class="btn btn-danger" onclick="deleteBook(${book.id})" style="padding: 5px 15px; font-size: 0.8em;">🗑️ Remove</button>
+                            <button class="btn btn-delete" onclick="deleteBook(${book.id})" style="padding: 5px 10px; font-size: 0.8em;">🗑️</button>
                         </td>
                     </tr>
                 `).join('');
@@ -1066,95 +817,68 @@
         }
 
         function approveBook(bookId) {
-            if (!isAdminLoggedIn) return;
-            
+            if (!adminLoggedIn) return;
             const book = books.find(b => b.id === bookId);
             if (book) {
                 book.status = 'approved';
                 localStorage.setItem('aweilLibraryBooks', JSON.stringify(books));
-                displayBooks(books);
+                showBooks();
                 updateStats();
                 updateAdminDashboard();
-                showNotification('✅ Book approved: ' + book.title);
+                showToast('✅ Book approved!');
             }
         }
 
         function rejectBook(bookId) {
-            if (!isAdminLoggedIn) return;
-            
-            if (confirm('Are you sure you want to reject this book? This cannot be undone.')) {
+            if (!adminLoggedIn) return;
+            if (confirm('Delete this book permanently?')) {
                 books = books.filter(b => b.id !== bookId);
                 localStorage.setItem('aweilLibraryBooks', JSON.stringify(books));
-                displayBooks(books);
+                showBooks();
                 updateStats();
                 updateAdminDashboard();
-                showNotification('❌ Book rejected and removed.');
+                showToast('❌ Book rejected');
             }
         }
 
         function deleteBook(bookId) {
-            if (!isAdminLoggedIn) return;
-            
-            if (confirm('Are you sure you want to delete this approved book? This cannot be undone.')) {
+            if (!adminLoggedIn) return;
+            if (confirm('Delete this book permanently?')) {
                 books = books.filter(b => b.id !== bookId);
                 localStorage.setItem('aweilLibraryBooks', JSON.stringify(books));
-                displayBooks(books);
+                showBooks();
                 updateStats();
                 updateAdminDashboard();
-                showNotification('🗑️ Book deleted from library.');
+                showToast('🗑️ Book deleted');
             }
         }
 
         // ==================== STATS ====================
         function updateStats() {
-            const approvedBooks = books.filter(b => b.status === 'approved');
-            const pendingBooks = books.filter(b => b.status === 'pending');
-            const categories = new Set(approvedBooks.map(b => b.category));
+            const approved = books.filter(b => b.status === 'approved').length;
+            const pending = books.filter(b => b.status === 'pending').length;
+            const categories = [...new Set(books.filter(b => b.status === 'approved').map(b => b.category))].length;
             
-            document.getElementById('bookCount').textContent = approvedBooks.length;
-            document.getElementById('pendingCount').textContent = pendingBooks.length;
-            document.getElementById('categoryCount').textContent = categories.size;
+            document.getElementById('bookCount').textContent = approved;
+            document.getElementById('pendingCount').textContent = pending;
+            document.getElementById('categoryCount').textContent = categories;
         }
 
-        // ==================== UTILITIES ====================
-        window.onclick = function(event) {
-            if (event.target == document.getElementById('bookModal')) closeModal();
-            if (event.target == document.getElementById('adminLoginModal')) closeAdminLogin();
-            if (event.target == document.getElementById('adminDashboardModal')) closeAdminDashboard();
-        }
+        // ==================== TOAST NOTIFICATION ====================
+        function showToast(message) {
+            const existing = document.querySelector('.notification');
+            if (existing) existing.remove();
 
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') {
-                closeModal();
-                closeAdminLogin();
-                closeAdminDashboard();
-            }
-        });
+            const toast = document.createElement('div');
+            toast.className = 'notification';
+            toast.textContent = message;
+            document.body.appendChild(toast);
 
-        function showNotification(message) {
-            const notification = document.createElement('div');
-            notification.style.cssText = `
-                position: fixed;
-                bottom: 20px;
-                right: 20px;
-                background: white;
-                color: #1a5e1a;
-                padding: 20px 30px;
-                border-radius: 10px;
-                box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-                z-index: 2000;
-                animation: slideIn 0.3s ease;
-                font-weight: 600;
-                border-left: 5px solid #2d8a2d;
-                max-width: 400px;
-            `;
-            notification.textContent = message;
-            document.body.appendChild(notification);
-            
             setTimeout(() => {
-                notification.style.animation = 'slideIn 0.3s ease reverse';
-                setTimeout(() => notification.remove(), 300);
-            }, 4000);
+                toast.style.opacity = '0';
+                toast.style.transition = 'opacity 0.3s';
+                setTimeout(() => toast.remove(), 300);
+            }, 3000);
         }
     </script>
 </body>
